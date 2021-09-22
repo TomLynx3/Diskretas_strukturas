@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css" />
+    <title>Diskretas Strukturas</title>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">MD1</a>
+            </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <h3>Artjoms Žerebkovs(12.v.)</h3>
+      </div>
+    </nav>
+    <div class="header-wrapper">
+              <div class="header">
+                  <h3 class="exercise-title">1.Uzdevums</h3>
+            <div class="controllers">
+             <button type="button" class="btn btn-secondary" id='ex-control-forward'>Nākamais uzdevums</button>
+               <button type="button" class="btn btn-secondary" id='ex-control-back' disabled>Iepriekšējais uzdevums</button>
+            </div>
+          </div>
+        </div>
+     <!--1 Uzdevums-->
+      <div class="content-container current-ex" id=ex-1>
+          
+           <div class="exercise-container">
+                <div class="exercise description">
+                   Dota binārā kopa (n- elementu skaits).
+                    <ol type='a'>
+                        <li>
+                            Paskaidrot Greja koda algoritmu.
+                        </li>
+                        <li>
+                            Noteikt visas apakškopas dotai kopai, izmantojot Greja kodu (n=5 - varianta numurs ir pārskaitlis vai n=7 - varianta numurs ir nepārskaitlis). 
+                        </li>
+                        <li>
+                            Dod reālas kopas piemēru (tehniskas sistēmas kopas piemērs, ja varianta numurs ir pārskaitlis;  kopas piemērs no dabas, ja varianta numurs ir nepārskaitlis) un noteikt visas apakškopas dotai kopai, izmantojot Greja kodu.
+                        </li>
+                        <li>
+                             Papildjautājums:
+                        Kādi vel eksistē algoritmi, lai noteikt visas apakškopas dotai kopai?
+                        </li>
+                    </ol>
+
+                </div>
+                <div class="exercise solution height110 ">
+                        <div class="text">
+                            a. Paskaidrot Greja koda algoritmu.
+                        </div>
+                        <span class="answer">
+                        Greja kods ir tāda kārtība binārajā sistēmā ka divas secīgas vērtības atšķiras tikai ar vienu bitu.
+                        </span>
+                         <div class="text">
+                            a,b. Greja koda algoritms
+                        </div>
+                        <span class="answer">
+                         <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" id='open-modal'>
+                           Greja Koda Generators
+                        </button>
+                        </span>
+                          <div class="text">
+                            c. Dod reālas kopas piemēru
+                        </div>
+                        <div class="answer">
+                            Greja kodu pielieto mainīgo digitālo signālu pārraidei, ja nav sinhronizācijas takta.
+                            Greja kodu pielieto bieži vien <b>leņķa kodētājos.</b>
+                            Piemēram mums ir disks ar 16 stāvokļiem kas raksturo pagrieziena leņķi. Katrs stāvoklis
+                            var but aprkastīts ar bināro skaitli.(0 - 0000, 1-0001, 2-0010,3-0011 un ta talāk)
+                            Lai aprakstīto šos skaitļus <i>mehāniski</i> uz diska tiek izveidoti caurumi kas
+                            var būt parvērsti bināraja skaitlī. No abam pusem mums atrodas diodes , kad disks tiek pagriezts
+                            atkarība no tā kāds ir stāvoklis uz diska,gaisma iet caur konkrētiem caurumiem cauri diskam, tas velāk varbūt
+                            pārveidots binārajā skaitlī, kas velāk raksturo noteikto stāvokli jeb pagrieziena leņķi.
+                            Bet rodas problēma, parejošos stāvokļos, binārais skaitlis varbūt nepareizi izvadīts tas rodas diožu asimetrijas dēļ.
+                            Lai mazinātu kļūdas iespējamību pielieto Greja kodu kas dot iespēju iekodēt visus stāvokļus ta lai pāreja 
+                            tikai atšķirtos ar vienu bitu kas varētu tieši noteikt stāvokļi. Velāk šīs kods var tiek parveidots binārajā.
+                        </div>
+                       
+                        <div class="text">
+                            d. Kādi vel eksistē algoritmi, lai noteikt visas apakškopas dotai kopai?
+                        </div>
+                         <span class="answer">
+                              Anti-Grey kods
+                         </span>
+
+           </div>
+            </div>        
+    </div>
+   <!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Grey Code</h5>
+        <button
+          type="button"
+          class="btn-close"
+          aria-label="Close"
+          data-dismiss="modal"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-content-container">
+          <div class="grey-code-example">
+            <div class="select-n">
+              <span>n=</span>
+              <select
+                class="form-select form-select-lg mb-2"
+                aria-label=".form-select-sm"
+                id="dropdown"
+              >
+                <option selected>5</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+           <div class="grey-code-output" id="grey-code-output"></div>
+        </div>
+        <div class="grey-code">
+                <pre>
+function generateGreyarr(n) {
+    if (n <= 0) return;
+
+    // 'arr' seit bus visi genereti kodi
+    let arr = [];
+
+    //sakam ar vienu bitu
+    arr.push("0");
+    arr.push("1");
+
+    // Katra iteracija genere  2*i kodus 
+    //no ieprieks generetajiem i kodiem.
+    let i, j;
+    // 1'<<'nvar aizvietot ar Math.pow(i,2)
+    for (i = 2; i < 1 << n; i = i << 1) {
+
+        //Ievieto iepreiks generatus kodus
+        //bet apgriezta seciba. arr satur vienadus kodus
+        for (j = i - 1; j >= 0; j--) {
+            arr.push(arr[j]);
+        }
+        //pievieno 0 pirmaijai pusei
+        for (j = 0; j < i; j++) {
+            arr[j] = "0" + arr[j];
+        }
+        // pievieno 1 otrai pusei
+        for (j = i; j < 2 * i; j++) {
+            arr[j] = "1" + arr[j];
+        }
+    }
+
+    return arr;
+}
+               </pre>
+           </div>
+    </div>
+   </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Aizvert
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!--2 Uzdevums-->
+    <div class="content-container" id=ex-2>
+        <div class="exercise-container">
+            <div class="exercise description">
+                <div class="text">
+                    Dots grafs.
+                    Uzrakstīt tā blakusvirsotņu matricu un incidentes matricu.
+                </div>
+                <img src="./assets/md1/uzd_2.png" alt="uzdevums_1">
+            </div>
+            <div class="exercise solution">
+                <div class="text">Blakusvirsotņu Matrica</div>
+                <div class="table">
+                    <div class="table-row table-cell-blue">
+                        <div class="table-col table-row-default-color">
+                            
+                        </div>
+                        <div class="table-col">
+                            V1
+                        </div>
+                        <div class="table-col">
+                             V2
+                        </div>
+                        <div class="table-col">
+                             V3
+                        </div>
+                        <div class="table-col">
+                             V4
+                        </div>
+                        <div class="table-col">
+                             V5
+                        </div>
+                        <div class="table-col">
+                             V6
+                        </div>
+                        
+                    </div>
+                    <div class="table-row">
+                       <div class="table-col table-cell-blue">
+                            V1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                    </div>
+                    <div class="table-row">
+                       <div class="table-col table-cell-blue">
+                            V2
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-col table-cell-blue">
+                            V3
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-col table-cell-blue">
+                            V4
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-col table-cell-blue">
+                            V5
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-col table-cell-blue">
+                            V6
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                    </div>
+                </div>
+                 <div class="text">Incidentes Matrica</div>
+                 <div class="table">
+                    <div class="table-row table-cell-blue">
+                        <div class="table-col table-row-default-color">
+                            
+                        </div>
+                        <div class="table-col">
+                            q1
+                        </div>
+                        <div class="table-col">
+                             q2
+                        </div>
+                        <div class="table-col">
+                             q3
+                        </div>
+                        <div class="table-col">
+                             q4
+                        </div>
+                        <div class="table-col">
+                             q5
+                        </div>
+                        <div class="table-col">
+                             q6
+                        </div>
+                         <div class="table-col">
+                             q7
+                        </div>
+                         <div class="table-col">
+                             q8
+                        </div>
+                         <div class="table-col">
+                             q9
+                        </div>
+                        
+                    </div>
+                    <div class="table-row">
+                        <div class="table-col table-cell-blue">
+                            V1
+                        </div>
+                        <div class="table-col">
+                            1
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                         <div class="table-col">
+                             0
+                        </div>
+                         <div class="table-col">
+                             0
+                        </div>
+                         <div class="table-col">
+                             0
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-col table-cell-blue">
+                            V2
+                        </div>
+                        <div class="table-col">
+                            0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                         <div class="table-col">
+                             0
+                        </div>
+                         <div class="table-col">
+                             0
+                        </div>
+                         <div class="table-col">
+                             0
+                        </div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-col table-cell-blue">
+                            V3
+                        </div>
+                        <div class="table-col">
+                            1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                         <div class="table-col">
+                             0
+                        </div>
+                         <div class="table-col">
+                             0
+                        </div>
+                         <div class="table-col">
+                             0
+                        </div>
+                    </div>
+                    <div class="table-row">
+                         <div class="table-col table-cell-blue">
+                            V4
+                        </div>
+                        <div class="table-col">
+                            0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                         <div class="table-col">
+                             1
+                        </div>
+                         <div class="table-col">
+                             1
+                        </div>
+                         <div class="table-col">
+                             0
+                        </div>
+                    </div>
+                    <div class="table-row">
+                         <div class="table-col table-cell-blue">
+                            V5
+                        </div>
+                        <div class="table-col">
+                            0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                         <div class="table-col">
+                             0
+                        </div>
+                         <div class="table-col">
+                             1
+                        </div>
+                         <div class="table-col">
+                             1
+                        </div>
+                    </div>
+                    <div class="table-row">
+                         <div class="table-col table-cell-blue">
+                            V6
+                        </div>
+                        <div class="table-col">
+                            0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                         <div class="table-col">
+                             1
+                        </div>
+                         <div class="table-col">
+                             1
+                        </div>
+                         <div class="table-col">
+                             1
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!--3Uzdevums-->
+    <div class="content-container" id=ex-3>
+        <!-- <h3 class="exercise-title ">3.Uzdevums</h3> -->
+        <div class="exercise-container">
+         <div class="exercise description">
+                <div class="text">
+                    Dots grafs.
+                    Uzrakstīt tā blakusvirsotņu matricu un incidentes matricu.
+                </div>
+                <img src="./assets/md1/uzd_3.png" alt="uzdevums_3">
+            </div>
+            <div class="exercise solution">
+                <div class="text">Blakusvirsotņu Matrica</div>
+                 <div class="table">
+                    <div class="table-row table-cell-blue">
+                        <div class="table-col table-row-default-color">
+                            
+                        </div>
+                        <div class="table-col">
+                            V1
+                        </div>
+                        <div class="table-col">
+                             V2
+                        </div>
+                        <div class="table-col">
+                             V3
+                        </div>
+                        <div class="table-col">
+                             V4
+                        </div>
+                        <div class="table-col">
+                             V5
+                        </div>
+                        <div class="table-col">
+                             V6
+                        </div>
+                        
+                    </div>
+                    <div class="table-row">
+                       <div class="table-col table-cell-blue">
+                            V1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                    </div>
+                    <div class="table-row">
+                       <div class="table-col table-cell-blue">
+                            V2
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-col table-cell-blue">
+                            V3
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-col table-cell-blue">
+                            V4
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-col table-cell-blue">
+                            V5
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-col table-cell-blue">
+                            V6
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                    </div>
+                </div>
+                 <div class="text">Incidentes Matrica</div>
+                 <div class="table">
+                    <div class="table-row table-cell-blue">
+                        <div class="table-col table-row-default-color">
+                            
+                        </div>
+                        <div class="table-col">
+                            q1
+                        </div>
+                        <div class="table-col">
+                             q2
+                        </div>
+                        <div class="table-col">
+                             q3
+                        </div>
+                        <div class="table-col">
+                             q4
+                        </div>
+                        <div class="table-col">
+                             q5
+                        </div>
+                        <div class="table-col">
+                             q6
+                        </div>
+                         <div class="table-col">
+                             q7
+                        </div>
+                        
+                    </div>
+                    <div class="table-row">
+                        <div class="table-col table-cell-blue">
+                            V1
+                        </div>
+                        <div class="table-col">
+                            +1
+                        </div>
+                        <div class="table-col">
+                             +1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                         <div class="table-col">
+                             0
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-col table-cell-blue">
+                            V2
+                        </div>
+                        <div class="table-col">
+                            -1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             -1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                         <div class="table-col">
+                             0
+                        </div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-col table-cell-blue">
+                            V3
+                        </div>
+                        <div class="table-col">
+                            0
+                        </div>
+                        <div class="table-col">
+                             -1
+                        </div>
+                        <div class="table-col">
+                             +1
+                        </div>
+                        <div class="table-col">
+                             +1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                         <div class="table-col">
+                             0
+                        </div>
+                    </div>
+                    <div class="table-row">
+                         <div class="table-col table-cell-blue">
+                            V4
+                        </div>
+                        <div class="table-col">
+                            0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             -1
+                        </div>
+                        <div class="table-col">
+                             -1
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                         <div class="table-col">
+                             0
+                        </div>
+                    </div>
+                    <div class="table-row">
+                         <div class="table-col table-cell-blue">
+                            V5
+                        </div>
+                        <div class="table-col">
+                            0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             +1
+                        </div>
+                        <div class="table-col">
+                             +1
+                        </div>
+                         <div class="table-col">
+                             -1
+                        </div>
+                    </div>
+                    <div class="table-row">
+                         <div class="table-col table-cell-blue">
+                            V6
+                        </div>
+                        <div class="table-col">
+                            0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             0
+                        </div>
+                        <div class="table-col">
+                             -1
+                        </div>
+                         <div class="table-col">
+                             +1
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>
